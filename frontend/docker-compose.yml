@@ -1,0 +1,15 @@
+services:
+  build:
+    build:
+      context: .
+      target: builder
+    volumes:
+      - ./out:/app/out
+    command: npm run build
+
+  serve:
+    build:
+      context: .
+      target: serve
+    ports:
+      - "3000:80"
