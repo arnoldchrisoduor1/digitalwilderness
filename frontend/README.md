@@ -28,7 +28,7 @@ Docker only copies the pre-built `out/` folder into Nginx. It does **not** run `
 docker compose up -d --build
 ```
 
-Open [http://localhost:8472](http://localhost:8472).
+Open [http://localhost:7291](http://localhost:7291).
 
 ## Deploy workflow
 

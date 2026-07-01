@@ -5,5 +5,5 @@ services:
       dockerfile: Dockerfile
     container_name: digitalwilderness-web
     ports:
-      - "8472:80"
+      - "7291:80"
     restart: unless-stopped
