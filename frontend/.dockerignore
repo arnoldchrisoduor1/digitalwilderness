@@ -1,7 +1,4 @@
-node_modules
-.next
-.git
-*.md
-Dockerfile
-docker-compose.yml
-.dockerignore
+**
+!/out
+!/out/**
+!nginx.conf

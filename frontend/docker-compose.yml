@@ -1,15 +1,9 @@
 services:
-  build:
+  digitalwilderness:
     build:
       context: .
-      target: builder
-    volumes:
-      - ./out:/app/out
-    command: npm run build
-
-  serve:
-    build:
-      context: .
-      target: serve
+      dockerfile: Dockerfile
+    container_name: digitalwilderness-web
     ports:
-      - "${HOST_PORT:-4827}:80"
+      - "8472:80"
+    restart: unless-stopped

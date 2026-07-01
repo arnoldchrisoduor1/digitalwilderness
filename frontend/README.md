@@ -1,6 +1,6 @@
 # Digital Wilderness — Frontend
 
-Next.js static site for [Digital Wilderness](https://digitalwilderness.dev), exported to `/out` for deployment.
+Next.js static site exported to `/out` and served with Nginx in Docker.
 
 ## Local development
 
@@ -12,43 +12,31 @@ npm run dev
 
 Open [http://localhost:4827](http://localhost:4827).
 
-## Build static export
+## Build (run locally, not on the server)
 
 ```bash
 npm run build
 ```
 
-Output lands in `frontend/out/`. Commit this folder and deploy it on your server — no build step required on the host.
+Output lands in `frontend/out/`. Commit and push `out/` with your deploy.
 
-## Docker build (recommended for reproducible exports)
+## Docker (server / preview)
 
-Build and write `out/` to your machine:
-
-```bash
-docker compose run --rm build
-```
-
-Preview the built site with nginx:
+Docker only copies the pre-built `out/` folder into Nginx. It does **not** run `npm install` or `next build`.
 
 ```bash
-docker compose up serve
+docker compose up -d --build
 ```
 
-Then open [http://localhost:4827](http://localhost:4827).
+Open [http://localhost:8472](http://localhost:8472).
 
-To use a different host port, set `HOST_PORT` before starting Docker (e.g. `HOST_PORT=5913 docker compose up serve`).
+## Deploy workflow
 
-## Server deployment
+1. On your machine: `npm run build`
+2. Push source + `frontend/out/`
+3. On the server: `docker compose up -d --build`
 
-Point your web server (nginx, Apache, Caddy, etc.) at the contents of `frontend/out/`.
-
-Example nginx root:
-
-```nginx
-root /var/www/digitalwilderness/out;
-index index.html;
-try_files $uri $uri/ $uri.html /index.html;
-```
+The image build should take seconds — just Nginx + static files.
 
 ## Stack
 
