@@ -10,7 +10,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:4827](http://localhost:4827).
 
 ## Build static export
 
@@ -34,7 +34,9 @@ Preview the built site with nginx:
 docker compose up serve
 ```
 
-Then open [http://localhost:3000](http://localhost:3000).
+Then open [http://localhost:4827](http://localhost:4827).
+
+To use a different host port, set `HOST_PORT` before starting Docker (e.g. `HOST_PORT=5913 docker compose up serve`).
 
 ## Server deployment
 

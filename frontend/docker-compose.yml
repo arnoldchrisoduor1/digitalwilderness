@@ -12,4 +12,4 @@ services:
       context: .
       target: serve
     ports:
-      - "3000:80"
+      - "${HOST_PORT:-4827}:80"
