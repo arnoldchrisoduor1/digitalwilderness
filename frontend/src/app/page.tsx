@@ -1,32 +1,17 @@
-import { Capabilities } from "@/components/Capabilities";
 import { CtaBand } from "@/components/CtaBand";
-import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
-import { Navbar } from "@/components/Navbar";
-import { Pipeline } from "@/components/Pipeline";
+import { Programs } from "@/components/Programs";
 import { Research } from "@/components/Research";
-import { ScrollProgress } from "@/components/ScrollProgress";
-import { Showcase } from "@/components/Showcase";
-import { Stack } from "@/components/Stack";
-import { ToTop } from "@/components/ToTop";
+import { Software } from "@/components/Software";
 
 export default function Home() {
   return (
-    <>
-      <ScrollProgress />
-      <div className="grain" aria-hidden />
-      <Navbar />
+    <main id="main-content">
       <Hero />
-      <main>
-        <Capabilities />
-        <Showcase />
-        <Pipeline />
-        <Research />
-        <Stack />
-        <CtaBand />
-      </main>
-      <Footer />
-      <ToTop />
-    </>
+      <Research />
+      <Programs />
+      <Software />
+      <CtaBand />
+    </main>
   );
 }

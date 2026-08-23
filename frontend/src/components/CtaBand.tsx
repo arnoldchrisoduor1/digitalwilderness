@@ -1,49 +1,34 @@
 "use client";
 
+import { SchematicMark } from "@/components/graphics/SchematicMark";
 import { MotionReveal } from "@/components/MotionReveal";
 import { siteConfig } from "@/lib/constants";
 
-function ArrowIcon() {
-  return (
-    <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden>
-      <path
-        d="M1 5H15M15 5L10.5 1M15 5L10.5 9"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
 export function CtaBand() {
   return (
-    <section className="section cta-band" id="contact">
-      <div className="container">
-        <MotionReveal>
-          <span className="tag tag-center">Let&apos;s build</span>
-        </MotionReveal>
-        <MotionReveal delay={0.1}>
-          <h2>Building something that needs to think, move, and respond in real time?</h2>
-        </MotionReveal>
-        <MotionReveal delay={0.2}>
+    <section className="section contact" id="contact">
+      <div className="container grid-12">
+        <MotionReveal className="contact-head">
+          <span className="kicker">Contact</span>
+          <h2>Bring us the problem before you bring us the spec.</h2>
           <p>
-            Tell us what you&apos;re building — software, silicon, or something that hasn&apos;t been named yet.
-            We&apos;ll tell you honestly whether we&apos;re the right fit.
+            Tell us what you&apos;re working on — a model, a board, a control
+            loop, a system that has to hold up in the field. We&apos;ll tell
+            you honestly whether it&apos;s a fit for what we research.
           </p>
-        </MotionReveal>
-        <MotionReveal delay={0.3}>
-          <div className="cta-row">
+          <div className="contact-cta">
             <a href={`mailto:${siteConfig.email}`} className="btn-primary">
-              Start a project
+              Start a conversation
             </a>
-            <a href={`mailto:${siteConfig.email}`} className="btn-ghost">
+            <a href={`mailto:${siteConfig.email}`} className="btn-secondary">
               {siteConfig.email}
-              <ArrowIcon />
             </a>
           </div>
         </MotionReveal>
+
+        <div className="contact-art">
+          <SchematicMark variant={2} />
+        </div>
       </div>
     </section>
   );

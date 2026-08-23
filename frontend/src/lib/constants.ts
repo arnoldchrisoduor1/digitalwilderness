@@ -1,66 +1,42 @@
 export const siteConfig = {
   name: "DIGITAL WILDERNESS",
-  title: "Digital Wilderness — Software, 3D, Hardware & Edge AI Research",
+  url: "https://digitalwilderness.dev",
+  title: "Digital Wilderness — Applied Research in Systems & Intelligence",
   description:
-    "A studio and research lab building software, 3D experiences, and hardware — plus an active edge-AI research track.",
+    "An R&D lab researching mathematics, electronics, avionics, and machine intelligence — and building the software that puts that research into the field.",
   email: "hello@digitalwilderness.dev",
   coordinates: { lat: "-1.286N", lon: "36.817E", city: "NAIROBI" },
 };
 
+export const affiliateNote =
+  "Digital Wilderness holds a substantial stake in Haus of Tech, whose products include Haus of Wellness and Haus of Laundry.";
+
 export const navLinks = [
-  { label: "Work", href: "#capabilities" },
-  { label: "Studio", href: "#showcase" },
-  { label: "Research", href: "#research" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Research", href: "/#research" },
+  { label: "Programs", href: "/#programs" },
+  { label: "Software", href: "/#software" },
+  { label: "Contact", href: "/#contact" },
 ];
 
-export const capabilities = [
+export const softwareCapabilities = [
   {
-    index: "01 · RT",
+    index: "01",
     title: "Real-Time Software",
     description:
-      "Systems that can't afford to be late — trading engines, control loops, and live telemetry pipelines built for deterministic, millisecond-level response.",
+      "Systems that can't afford to be late — control loops, telemetry pipelines, and decision systems built for deterministic, millisecond-level response.",
     tags: ["Rust", "Go", "C++"],
   },
   {
-    index: "02 · 3D",
+    index: "02",
     title: "Dimensional Web",
     description:
-      "Product configurators, spatial storytelling, and WebGL experiences that turn a browser tab into something people actually want to explore.",
+      "Product configurators and spatial interfaces that put research and hardware in front of people who'll never open a datasheet.",
     tags: ["Three.js", "WebGL", "TypeScript"],
   },
-  {
-    index: "03 · HW",
-    title: "Hardware Engineering",
-    description:
-      "Electronics taken from schematic to shipped product — PCB design, embedded firmware, prototyping, fabrication oversight, and environmental testing.",
-    tags: ["KiCad", "Embedded C/Rust", "EMI/EMC"],
-  },
-  {
-    index: "04 · R&D",
-    title: "Applied Research",
-    description:
-      "An in-house research track on edge computing — fusing AI and hardware for swarm coordination and decision-making under real time constraints.",
-    tags: ["Edge AI", "Swarm Systems", "Python"],
-  },
 ];
 
-export const showcaseFeatures = [
-  {
-    title: "Interactive by default",
-    text: "every scene responds to pointer, scroll, and device orientation.",
-  },
-  {
-    title: "Performance-first",
-    text: "optimized geometry and draw calls so it's fast on real devices, not just demo machines.",
-  },
-  {
-    title: "Built to convert",
-    text: "motion with a job to do: guiding attention, not just decorating the page.",
-  },
-];
-
-export const pipelineSteps = [
+export const programSteps = [
   {
     num: "01",
     title: "Design",
@@ -93,30 +69,11 @@ export const pipelineSteps = [
   },
 ];
 
-export const researchFeatures = [
-  {
-    title: "Edge inference architectures",
-    text: "pushing AI models onto constrained devices, not just the cloud.",
-  },
-  {
-    title: "Swarm coordination",
-    text: "many small devices reaching group decisions with no single point of failure.",
-  },
-  {
-    title: "Time-critical distributed pipelines",
-    text: "data processed where it's created, when a round trip to a server is too slow.",
-  },
-  {
-    title: "Hardware/software co-design",
-    text: "building the chip layer and the model together instead of bolting one onto the other.",
-  },
-];
-
 export const researchStats = [
-  { count: 5, suffix: "ms", label: "Target control-loop latency" },
-  { count: 120, suffix: "+", label: "Nodes per swarm simulation" },
-  { count: 100, suffix: "%", label: "On-device inference, no cloud round trip" },
-  { text: "24/7", label: "Designed for continuous operation" },
+  { value: "5ms", label: "Target control-loop latency" },
+  { value: "120+", label: "Nodes per swarm simulation" },
+  { value: "100%", label: "On-device inference, no cloud round trip" },
+  { value: "24/7", label: "Designed for continuous operation" },
 ];
 
 export const stackRows = [
@@ -147,18 +104,19 @@ export const stackRows = [
   },
 ];
 
-export const footerStudio = [
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "3D Showcase", href: "#showcase" },
-  { label: "Hardware", href: "#pipeline" },
-  { label: "Research", href: "#research" },
+export const footerLab = [
+  { label: "Research", href: "/#research" },
+  { label: "Programs", href: "/#programs" },
+  { label: "Software", href: "/#software" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const footerCompany = [
-  { label: "Work", href: "#" },
-  { label: "Process", href: "#" },
-  { label: "Careers", href: "#" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Ventures", href: "/ventures" },
+  { label: "Blog", href: "/blog" },
+  { label: "Careers", href: "/careers" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const footerConnect = [

@@ -1,9 +1,6 @@
-import {
-  footerCompany,
-  footerConnect,
-  footerStudio,
-  siteConfig,
-} from "@/lib/constants";
+import Link from "next/link";
+import { LogoMark } from "@/components/graphics/LogoMark";
+import { affiliateNote, footerCompany, footerConnect, footerLab, siteConfig } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -11,28 +8,29 @@ export function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <a href="#" className="logo">
-              <span className="dot" />
+            <Link href="/" className="logo">
+              <LogoMark className="mark" />
               {siteConfig.name}
-            </a>
+            </Link>
             <p>{siteConfig.description}</p>
+            <p className="footer-note">{affiliateNote}</p>
           </div>
 
           <div className="footer-col">
-            <h5>Studio</h5>
-            {footerStudio.map((link) => (
-              <a key={link.label} href={link.href}>
+            <h5>Lab</h5>
+            {footerLab.map((link) => (
+              <Link key={link.label} href={link.href}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           <div className="footer-col">
             <h5>Company</h5>
             {footerCompany.map((link) => (
-              <a key={link.label} href={link.href}>
+              <Link key={link.label} href={link.href}>
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -47,13 +45,8 @@ export function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>
-            © 2026 Digital Wilderness. <span className="accent">Built in the wild.</span>
-          </span>
-          <span>
-            LAT <span className="accent">{siteConfig.coordinates.lat}</span> · LON{" "}
-            <span className="accent">{siteConfig.coordinates.lon}</span> · {siteConfig.coordinates.city}
-          </span>
+          <span>© 2026 Digital Wilderness.</span>
+          <span>{siteConfig.coordinates.city}</span>
         </div>
       </div>
     </footer>

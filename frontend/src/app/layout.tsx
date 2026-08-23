@@ -1,29 +1,26 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Syne } from "next/font/google";
+import { EB_Garamond, Crimson_Text } from "next/font/google";
+import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
+import { ToTop } from "@/components/ToTop";
 import "./globals.css";
 
-const syne = Syne({
-  variable: "--font-syne",
+const ebGaramond = EB_Garamond({
+  variable: "--font-heading",
   subsets: ["latin"],
-  weight: ["500", "700", "800"],
+  weight: ["500", "600", "700", "800"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const crimsonText = Crimson_Text({
+  variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const jetbrains = JetBrains_Mono({
-  variable: "--font-jetbrains",
-  subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Digital Wilderness — Software, 3D, Hardware & Edge AI Research",
+  title: "Digital Wilderness — Applied Research in Systems & Intelligence",
   description:
-    "A studio and research lab building software, 3D experiences, and hardware — plus an active edge-AI research track.",
+    "An R&D lab researching mathematics, electronics, avionics, and machine intelligence — and building the software that puts that research into the field.",
 };
 
 export default function RootLayout({
@@ -34,9 +31,17 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
+      className={`${ebGaramond.variable} ${crimsonText.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+        <Navbar />
+        {children}
+        <Footer />
+        <ToTop />
+      </body>
     </html>
   );
 }

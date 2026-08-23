@@ -1,7 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { LogoMark } from "@/components/graphics/LogoMark";
 import { navLinks, siteConfig } from "@/lib/constants";
 
 export function Navbar() {
@@ -15,32 +16,23 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.15 }}
-      className={`site-nav${scrolled ? " scrolled" : ""}`}
-    >
-      <a href="#" className="logo">
-        <span className="dot" />
+    <nav className={`site-nav${scrolled ? " scrolled" : ""}`}>
+      <Link href="/" className="logo">
+        <LogoMark className="mark" />
         {siteConfig.name}
-      </a>
+      </Link>
 
       <ul className="nav-links">
         {navLinks.map((link) => (
           <li key={link.href}>
-            <a href={link.href}>{link.label}</a>
+            <Link href={link.href}>{link.label}</Link>
           </li>
         ))}
       </ul>
 
-      <a href="#contact" className="nav-cta nav-cta-desktop">
-        Start a project
-      </a>
-
-      <a href="#contact" className="nav-cta nav-cta-mobile">
+      <Link href="/#contact" className="nav-cta">
         Contact
-      </a>
-    </motion.nav>
+      </Link>
+    </nav>
   );
 }
