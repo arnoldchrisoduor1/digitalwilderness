@@ -1,11 +1,10 @@
-# Host Nginx reverse-proxy for Digital Wilderness (container on 127.0.0.1:APP_PORT)
-# Placeholders: __DOMAIN__ __APP_PORT__
+# Host Nginx reverse-proxy for Digital Wilderness (container on 127.0.0.1)
+# Sed placeholders below: DOMAIN and APP_PORT tokens only appear in active directives.
 # Separate from portfolio's /etc/nginx/sites-available/portfolio — do not merge.
 
 server {
     listen 80;
     listen [::]:80;
-    # __DOMAIN__ may be space-separated hostnames
     server_name __DOMAIN__;
 
     location / {

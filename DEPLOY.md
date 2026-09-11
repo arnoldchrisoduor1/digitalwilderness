@@ -77,5 +77,5 @@ Anything done by hand on the server that the script does not encode should be li
 
 - Droplet: `104.248.224.133` (same as portfolio). System stack (Docker, Nginx, Certbot, UFW, swap) already provisioned by the portfolio deploy.
 - DNS A record for `wilderness.oduor-arnold.com` → droplet.
-- Live URL (after provision + deploy): https://wilderness.oduor-arnold.com
+- **First successful provision + deploy (2026-09-11):** system pkgs skipped; cloned to `/opt/digital-wilderness`; nginx site `digital-wilderness` enabled; separate Let's Encrypt cert issued (expires ~2026-12-10); container `digitalwilderness-web` on `127.0.0.1:7291`; both https://wilderness.oduor-arnold.com and https://oduor-arnold.com returned HTTP 200.
 - Portfolio must remain at https://oduor-arnold.com — neighbor check in this script verifies after each deploy.
