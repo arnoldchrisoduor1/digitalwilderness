@@ -1,3 +1,7 @@
+# Compose project name must stay unique on the shared droplet
+# (portfolio uses directory-default "portfolio_v3" — do not collide).
+name: digital-wilderness
+
 services:
   digitalwilderness:
     build:
@@ -5,5 +9,7 @@ services:
       dockerfile: Dockerfile
     container_name: digitalwilderness-web
     ports:
-      - "7291:80"
+      # Bound to localhost — host Nginx reverse-proxies 80/443 → this port
+      # Portfolio already owns 127.0.0.1:8472; this app uses 7291.
+      - "127.0.0.1:7291:80"
     restart: unless-stopped

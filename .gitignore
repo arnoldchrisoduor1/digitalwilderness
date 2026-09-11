@@ -1,0 +1,8 @@
+# Deploy local state (never commit)
+deploy.config
+deploy.log
+
+# SSH keys if ever dropped in repo root
+personal
+personal.pub
+*.pem
